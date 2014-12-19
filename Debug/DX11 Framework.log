@@ -1,27 +1,9 @@
-﻿Build started 18/12/2014 10:36:54.
-     1>Project "E:\DirectXtut\COSE50581 Framework - tut\COSE50581 Framework\DX11 Framework.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oi /Oy- /D WIN32 /D _DEBUG /D DEBUG /D PROFILE /D _WINDOWS /D D3DXFX_LARGEADDRESS_HANDLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /openmp- /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt  Application.cpp
-         Application.cpp
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(86): warning C4244: 'argument' : conversion from 'UINT' to 'FLOAT', possible loss of data
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(91): warning C4244: 'argument' : conversion from 'UINT' to 'FLOAT', possible loss of data
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(78): warning C4189: 'Eye' : local variable is initialized but not referenced
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(80): warning C4189: 'Up' : local variable is initialized but not referenced
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(79): warning C4189: 'At' : local variable is initialized but not referenced
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(649): warning C4238: nonstandard extension used : class rvalue used as lvalue
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(650): warning C4238: nonstandard extension used : class rvalue used as lvalue
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(654): warning C4238: nonstandard extension used : class rvalue used as lvalue
-     1>e:\directxtut\cose50581 framework - tut\cose50581 framework\application.cpp(655): warning C4238: nonstandard extension used : class rvalue used as lvalue
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\DirectXtut\COSE50581 Framework - tut\COSE50581 Framework\Debug\DX11 Framework.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dxguid.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\DirectXtut\COSE50581 Framework - tut\COSE50581 Framework\Debug\DX11 Framework.pdb" /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\DirectXtut\COSE50581 Framework - tut\COSE50581 Framework\Debug\DX11 Framework.lib" /MACHINE:X86 /SAFESEH  "Debug\DX11 Framework.res"
-         Debug\DDSTextureLoader.obj
-         Debug\Application.obj
-         Debug\Camera.obj
-         "Debug\DX11 Framework.obj"
-         Debug\GameObject.obj
-         DX11 Framework.vcxproj -> E:\DirectXtut\COSE50581 Framework - tut\COSE50581 Framework\Debug\DX11 Framework.exe
-     1>Done Building Project "E:\DirectXtut\COSE50581 Framework - tut\COSE50581 Framework\DX11 Framework.vcxproj" (Build target(s)).
+﻿Build started 19/12/2014 13:22:40.
+     1>Project "C:\Student Temporary Folder\dx\DX11 Framework.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         DX11 Framework.vcxproj -> C:\Student Temporary Folder\dx\Debug\DX11 Framework.exe
+     1>Done Building Project "C:\Student Temporary Folder\dx\DX11 Framework.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.00
+Time Elapsed 00:00:00.05

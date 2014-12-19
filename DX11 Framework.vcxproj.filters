@@ -15,14 +15,14 @@
     <ClInclude Include="struct.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="..\..\DDSTextureLoader\DDSTextureLoader.h" />
+    <ClInclude Include="DDSTextureLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="DX11 Framework.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="..\..\DDSTextureLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="DDSTextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">

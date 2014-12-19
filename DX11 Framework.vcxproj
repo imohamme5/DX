@@ -373,9 +373,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\DDSTextureLoader\DDSTextureLoader.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="DDSTextureLoader.cpp" />
     <ClCompile Include="DX11 Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
   </ItemGroup>
@@ -385,9 +385,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\DDSTextureLoader\DDSTextureLoader.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DDSTextureLoader.h" />
     <ClInclude Include="GameObject.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="struct.h" />
