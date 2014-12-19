@@ -71,6 +71,9 @@ HRESULT Application::Initialise(HINSTANCE hInstance, int nCmdShow)
         return E_FAIL;
     }
 
+
+	//objMeshData = OBJLoader::Load("sphere.obj", _pd3dDevice, false); //this is for 3ds max
+
 	// Initialize the world matrix
 	XMStoreFloat4x4(&_world, XMMatrixIdentity());
 
@@ -530,10 +533,6 @@ HRESULT Application::InitDevice()
 
 	InitVertexBuffer();
 
-    
-   
-	//
-
 	InitIndexBuffer();
 
 	
@@ -543,6 +542,9 @@ HRESULT Application::InitDevice()
 		cube[i]->Initialise(cubes_data); //initialised the cube class
 	}
     
+	objMeshData = OBJLoader::Load("star.obj", _pd3dDevice); // this is to load with 3ds max 
+	sphere = new GameObject();
+	sphere->Initialise(objMeshData);
 	
     // Set primitive topology
     _pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -596,6 +598,9 @@ void Application::Update()
 	camera[0]->CalculateViewProjection(); // call camera class
 	camera[1]->CalculateViewProjection();
 
+	sphere->UpdateWorld();
+
+
     // Update our time
     static float t = 0.0f;
 
@@ -636,6 +641,8 @@ void Application::Draw()
     _pImmediateContext->ClearRenderTargetView(_pRenderTargetView, ClearColor);
 	_pImmediateContext->ClearDepthStencilView(_depthStencilView, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
+
+
 	XMMATRIX world = XMLoadFloat4x4(&_world);
 	XMMATRIX world2 = XMLoadFloat4x4(&_world2);
 	XMMATRIX world3 = XMLoadFloat4x4(&_world3);
@@ -654,6 +661,8 @@ void Application::Draw()
 		view = XMLoadFloat4x4(&camera[1]->GetView());
 		projection = XMLoadFloat4x4(&camera[1]->GetProjection());
 	}
+
+	
 	//
     // Update variables
     //
@@ -661,7 +670,7 @@ void Application::Draw()
 	XMFLOAT4 MaterialColor = XMFLOAT4(0.2f, 0.2f, 0.2f, 1.0f);
 	XMFLOAT4 AmbientMaterialColor = XMFLOAT4(0.2f, 0.2f, 0.2f, 1.0f);
 
-
+	
 
     ConstantBuffer cb;
 	cb.mWorld = XMMatrixTranspose(world);					
@@ -682,6 +691,8 @@ void Application::Draw()
 	_pImmediateContext->VSSetConstantBuffers(0, 1, &_pConstantBuffer);
 	_pImmediateContext->PSSetShader(_pPixelShader, nullptr, 0);
 	_pImmediateContext->PSSetConstantBuffers(0, 1, &_pConstantBuffer);
+	sphere->Draw(_pd3dDevice, _pImmediateContext);
+//	sphere->Draw(_pd3dDevice, _pImmediateContext);
     //
     // Drawing cubes
     //
@@ -700,10 +711,13 @@ void Application::Draw()
 	_pImmediateContext->UpdateSubresource(_pConstantBuffer, 0, nullptr, &cb, 0, 0);
 	_pImmediateContext->DrawIndexed(36, 0, 0);*/   
 
+	 
 	 cb.mWorld = XMMatrixTranspose(world);
 	 _pImmediateContext->UpdateSubresource(_pConstantBuffer, 0, nullptr, &cb, 0, 0);
 	 cube[0]->Draw(_pd3dDevice, _pImmediateContext);
+	
 
+	
 	cb.mWorld = XMMatrixTranspose(world2);
 	_pImmediateContext->UpdateSubresource(_pConstantBuffer, 0, nullptr, &cb, 0, 0);
 	_pImmediateContext->DrawIndexed(36, 0, 0);
@@ -725,8 +739,8 @@ void Application::Draw()
 	_pImmediateContext->UpdateSubresource(_pConstantBuffer, 0, nullptr, &cb, 0, 0);
 	_pImmediateContext->DrawIndexed(6, 0, 0);
 
-	
 
+	
     // Present our back buffer to our front buffer
     //
     _pSwapChain->Present(0, 0);

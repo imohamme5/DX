@@ -4,6 +4,7 @@
 #include "resource.h"
 #include "GameObject.h"
 #include "Camera.h"
+#include "OBJLoader.h"
 
 
 using namespace DirectX;
@@ -47,6 +48,8 @@ private:
 	Camera			*		camera[1];
 	ID3D11ShaderResourceView * _pTextureRV = nullptr;
 	ID3D11SamplerState * _pSamplerLinear = nullptr;
+	MeshData objMeshData;
+	GameObject * sphere;
 	
 
 

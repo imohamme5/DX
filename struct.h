@@ -5,6 +5,7 @@
 #include <d3dcompiler.h>
 #include <directxmath.h>
 #include <directxcolors.h>
+#include <DirectXMath.h>
 
 
 using namespace DirectX;
@@ -14,7 +15,14 @@ struct SimpleVertex
 	XMFLOAT3 Pos;
 	XMFLOAT3 Normal;
 	XMFLOAT2 TexC;
+
+	bool operator<(const SimpleVertex other) const //merging 3 buffers into one
+	{
+		return memcmp((void*)this, (void*)&other, sizeof(SimpleVertex)) > 0;
+	};
 };
+
+
 
 struct ConstantBuffer
 {

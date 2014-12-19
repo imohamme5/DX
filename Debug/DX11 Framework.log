@@ -1,4 +1,4 @@
-﻿Build started 19/12/2014 13:22:40.
+﻿Build started 19/12/2014 15:00:07.
      1>Project "C:\Student Temporary Folder\dx\DX11 Framework.vcxproj" on node 2 (Build target(s)).
      1>Link:
          DX11 Framework.vcxproj -> C:\Student Temporary Folder\dx\Debug\DX11 Framework.exe
@@ -6,4 +6,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.05
+Time Elapsed 00:00:00.04
